@@ -32,7 +32,7 @@ bot.start((ctx) =>
 /CEO: The mastermind
 
 /help: List of all commands
-/core\\_values: Our principles day in - day out
+/core\\_values: Our principles day in \\- day out
   `)
 );
 bot.command("core_values", async (ctx) => {
