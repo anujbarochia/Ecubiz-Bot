@@ -32,8 +32,7 @@ bot.start((ctx) =>
 /CEO: The mastermind
 
 /help: List of all commands
-
-/core\\_values [currently working on it]
+/core\\_values: Our principles day in - day out
   `)
 );
 bot.command("core_values", async (ctx) => {
@@ -133,13 +132,16 @@ bot.command("help", (ctx) =>
 bot.on("sticker", (ctx) => ctx.reply("❤"));
 
 bot.hears(/hello/i, (ctx) => {
-  ctx.reply("Hello there!");
+  const firstName = ctx.message.from.first_name;
+  ctx.reply(
+    `Hello ${firstName},\nHope you are having good day\n\n How can i /help you`
+  );
 });
 
 bot.on("text", (ctx) => {
   const query = ctx.message.text; //users reply
 
-  const reply = `You asked: *${query}*\n\nI'm here to help`;
+  const reply = `You asked: *${query}*\n\nBut i can't understand it, try using /help for commands or contact at hello@ecubiz\\.com`;
 
   ctx.replyWithMarkdownV2(reply);
 });
